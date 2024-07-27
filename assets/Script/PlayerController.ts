@@ -7,6 +7,7 @@ import {
     input,
     v3,
     Vec3,
+    Animation,
 } from 'cc';
 const { ccclass, property } = _decorator;
 
@@ -26,16 +27,23 @@ export class PlayerController extends Component {
     @property(Vec3)
     jumpVector = v3(1, 0, 0);
 
+    @property(Animation)
+    jumpAnimation: Animation;
+
     start() {
         input.on(Input.EventType.MOUSE_UP, this.onMouseUp, this);
     }
 
     onMouseUp(event: EventMouse) {
-        this.jumpByStep(1);
+        if (event.getButton() == EventMouse.BUTTON_LEFT) this.jumpByStep(1);
+        else if (event.getButton() == EventMouse.BUTTON_RIGHT)
+            this.jumpByStep(2);
     }
 
     jumpByStep(step: number) {
         if (this._startJump) return;
+        if (this.jumpAnimation)
+            this.jumpAnimation.play(`${['One', 'Two'][step - 1]}Jump`);
         this._startJump = true;
         this._jumpStep = step;
         this._currentJumpTime = 0;
