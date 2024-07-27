@@ -20,6 +20,8 @@ export class PlayerController extends Component {
     private _currentJumpTime = 0;
     private _currentJumpSpeed = 0;
     private _deltaPosition = v3();
+    private _currentMoveIndex = 0;
+    private _originPosition = v3();
 
     @property(CCFloat)
     jumpTime = 0.1;
@@ -31,7 +33,7 @@ export class PlayerController extends Component {
     jumpAnimation: Animation;
 
     start() {
-        input.on(Input.EventType.MOUSE_UP, this.onMouseUp, this);
+        this.node.getPosition(this._originPosition);
     }
 
     onMouseUp(event: EventMouse) {
@@ -55,6 +57,8 @@ export class PlayerController extends Component {
             this._currentPosition,
             v3(this._jumpStep * this.jumpScale, 0, 0)
         );
+
+        this._currentMoveIndex += step;
     }
 
     update(deltaTime: number) {
@@ -68,6 +72,7 @@ export class PlayerController extends Component {
     endJump() {
         this.node.setPosition(this._targetPosition);
         this._startJump = false;
+        this.onOnceJumpEnd();
     }
 
     tweenJump(deltaTime: number) {
@@ -80,5 +85,19 @@ export class PlayerController extends Component {
             this._deltaPosition
         );
         this.node.setPosition(this._currentPosition);
+    }
+
+    reset() {
+        this._currentMoveIndex = 0;
+        this.node.setPosition(this._originPosition);
+    }
+
+    onOnceJumpEnd() {
+        this.node.emit('JumpEnd', this._currentMoveIndex);
+    }
+
+    setInputActive(active: boolean) {
+        if (active) input.on(Input.EventType.MOUSE_UP, this.onMouseUp, this);
+        else input.off(Input.EventType.MOUSE_UP, this.onMouseUp, this);
     }
 }
