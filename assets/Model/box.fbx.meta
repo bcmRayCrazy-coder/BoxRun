@@ -56,7 +56,13 @@
           "from": 0,
           "to": 3.125
         },
-        "events": []
+        "events": [],
+        "embeddedPlayers": [],
+        "editorExtras": {
+          "embeddedPlayerGroups": []
+        },
+        "speed": 1,
+        "auxiliaryCurves": {}
       },
       "ver": "1.0.17",
       "imported": true,

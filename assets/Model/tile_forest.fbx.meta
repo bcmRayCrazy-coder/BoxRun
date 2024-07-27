@@ -2,15 +2,15 @@
   "ver": "2.3.13",
   "importer": "fbx",
   "imported": true,
-  "uuid": "142cc1e8-7e36-4f51-a635-f83e10b7ec6b",
+  "uuid": "d47afe6f-8e84-4d89-a3dc-408a4a09ec63",
   "files": [],
   "subMetas": {
-    "1c761": {
+    "8303b": {
       "importer": "gltf-mesh",
-      "uuid": "142cc1e8-7e36-4f51-a635-f83e10b7ec6b@1c761",
+      "uuid": "d47afe6f-8e84-4d89-a3dc-408a4a09ec63@8303b",
       "displayName": "",
-      "id": "1c761",
-      "name": "tileSmall_teamBlue_Material0.mesh",
+      "id": "8303b",
+      "name": "tileSmall_forest_Material0.mesh",
       "userData": {
         "gltfIndex": 0,
         "triangleCount": 348
@@ -23,12 +23,12 @@
       ],
       "subMetas": {}
     },
-    "78e12": {
+    "9f269": {
       "importer": "gltf-material",
-      "uuid": "142cc1e8-7e36-4f51-a635-f83e10b7ec6b@78e12",
+      "uuid": "d47afe6f-8e84-4d89-a3dc-408a4a09ec63@9f269",
       "displayName": "",
-      "id": "78e12",
-      "name": "Blue.material",
+      "id": "9f269",
+      "name": "Green.material",
       "userData": {
         "gltfIndex": 0
       },
@@ -39,12 +39,12 @@
       ],
       "subMetas": {}
     },
-    "710bf": {
+    "3fdbc": {
       "importer": "gltf-material",
-      "uuid": "142cc1e8-7e36-4f51-a635-f83e10b7ec6b@710bf",
+      "uuid": "d47afe6f-8e84-4d89-a3dc-408a4a09ec63@3fdbc",
       "displayName": "",
-      "id": "710bf",
-      "name": "Metal.material",
+      "id": "3fdbc",
+      "name": "BrownDark.material",
       "userData": {
         "gltfIndex": 1
       },
@@ -55,12 +55,12 @@
       ],
       "subMetas": {}
     },
-    "70e87": {
+    "09955": {
       "importer": "gltf-scene",
-      "uuid": "142cc1e8-7e36-4f51-a635-f83e10b7ec6b@70e87",
+      "uuid": "d47afe6f-8e84-4d89-a3dc-408a4a09ec63@09955",
       "displayName": "",
-      "id": "70e87",
-      "name": "tileSmall_teamBlue.prefab",
+      "id": "09955",
+      "name": "tile_forest.prefab",
       "userData": {
         "gltfIndex": 0
       },
@@ -80,16 +80,16 @@
     },
     "assetFinder": {
       "meshes": [
-        "142cc1e8-7e36-4f51-a635-f83e10b7ec6b@1c761"
+        "d47afe6f-8e84-4d89-a3dc-408a4a09ec63@8303b"
       ],
       "skeletons": [],
       "textures": [],
       "materials": [
-        "142cc1e8-7e36-4f51-a635-f83e10b7ec6b@78e12",
-        "142cc1e8-7e36-4f51-a635-f83e10b7ec6b@710bf"
+        "d47afe6f-8e84-4d89-a3dc-408a4a09ec63@9f269",
+        "d47afe6f-8e84-4d89-a3dc-408a4a09ec63@3fdbc"
       ],
       "scenes": [
-        "142cc1e8-7e36-4f51-a635-f83e10b7ec6b@70e87"
+        "d47afe6f-8e84-4d89-a3dc-408a4a09ec63@09955"
       ]
     },
     "lods": {
