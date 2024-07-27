@@ -24,8 +24,8 @@ export class PlayerController extends Component {
     @property(CCFloat)
     jumpTime = 0.1;
 
-    @property(Vec3)
-    jumpVector = v3(1, 0, 0);
+    @property(CCFloat)
+    jumpScale = 1;
 
     @property(Animation)
     jumpAnimation: Animation;
@@ -53,7 +53,7 @@ export class PlayerController extends Component {
         Vec3.add(
             this._targetPosition,
             this._currentPosition,
-            this.jumpVector.multiplyScalar(this._jumpStep)
+            v3(this._jumpStep * this.jumpScale, 0, 0)
         );
     }
 
@@ -72,15 +72,13 @@ export class PlayerController extends Component {
 
     tweenJump(deltaTime: number) {
         this.node.getPosition(this._currentPosition);
-        Vec3.scaleAndAdd(
+        this._deltaPosition.x =
+            this._currentJumpSpeed * deltaTime * this.jumpScale;
+        Vec3.add(
             this._currentPosition,
             this._currentPosition,
-            this.jumpVector,
-            deltaTime * this._currentJumpSpeed
+            this._deltaPosition
         );
-
-        console.log(deltaTime, this._deltaPosition);
-
         this.node.setPosition(this._currentPosition);
     }
 }
