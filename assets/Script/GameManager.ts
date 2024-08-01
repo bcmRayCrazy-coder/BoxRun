@@ -140,10 +140,8 @@ export class GameManager extends Component {
         if (moveIndex < this.roadLength) {
             this.stepLabel.string = `${moveIndex} / ${this.roadLength}`;
             // @ts-ignore
-            if (DieBlocks.includes(this._road[moveIndex])) {
+            if (DieBlocks.includes(this._road[moveIndex]))
                 this.setCurrentState(GameState.GS_INIT);
-                this.playerController.reset();
-            }
         } else {
             this.stepLabel.string = `${this.roadLength} / ${this.roadLength}`;
             this.setCurrentState(GameState.GS_END);
@@ -158,11 +156,16 @@ export class GameManager extends Component {
         this.setCurrentState(GameState.GS_PLAY);
     }
 
+    onMenuButtonClicked() {
+        this.setCurrentState(GameState.GS_INIT);
+    }
+
     setCurrentState(state: GameState) {
         this._currentState = state;
         switch (state) {
             case GameState.GS_INIT:
                 this.init();
+                this.playerController.reset();
                 break;
             case GameState.GS_PLAY:
                 this.activeUi('Start', false);
