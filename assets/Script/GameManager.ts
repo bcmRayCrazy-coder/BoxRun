@@ -9,6 +9,7 @@ import {
     Prefab,
 } from 'cc';
 import { PlayerController } from './PlayerController';
+import { UiManager } from './UiManager';
 const { ccclass, property } = _decorator;
 
 enum BlockType {
@@ -53,8 +54,8 @@ export class GameManager extends Component {
     @property(PlayerController)
     playerController: PlayerController;
 
-    @property(Node)
-    startMenu: Node;
+    @property(UiManager)
+    uiManager: UiManager;
 
     @property(Label)
     stepLabel: Label;
@@ -66,7 +67,7 @@ export class GameManager extends Component {
     }
 
     init() {
-        if (this.startMenu) this.startMenu.active = true;
+        this.activeUi('Start');
         this.generateRoad();
 
         this.playerController.setInputActive(false);
@@ -144,10 +145,13 @@ export class GameManager extends Component {
                 this.playerController.reset();
             }
         } else {
-            this.stepLabel.string =
-                moveIndex + `${this.roadLength} / ${this.roadLength}`;
+            this.stepLabel.string = `${this.roadLength} / ${this.roadLength}`;
             this.setCurrentState(GameState.GS_END);
         }
+    }
+
+    activeUi(name: string, active = true) {
+        this.uiManager.active(name, active);
     }
 
     onPlayButtonClicked() {
@@ -161,11 +165,15 @@ export class GameManager extends Component {
                 this.init();
                 break;
             case GameState.GS_PLAY:
-                if (this.startMenu) this.startMenu.active = false;
+                this.activeUi('Start', false);
                 setTimeout(
                     () => this.playerController.setInputActive(true),
                     0.1
                 );
+                break;
+            case GameState.GS_END:
+                this.activeUi('End');
+                this.playerController.setInputActive(false);
                 break;
         }
     }
