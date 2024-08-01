@@ -628,7 +628,7 @@
       "__uuid__": "8065006b-d4ea-4c70-a9da-275e2b2f8f73",
       "__expectedType__": "cc.Prefab"
     },
-    "roadLength": 50,
+    "roadLength": 5,
     "blockDistance": 1.5,
     "playerController": {
       "__id__": 25
@@ -887,7 +887,7 @@
     "_priority": 1073741824,
     "_fov": 45,
     "_fovAxis": 0,
-    "_orthoHeight": 429.1666666666667,
+    "_orthoHeight": 360,
     "_near": 1,
     "_far": 2000,
     "_color": {
@@ -982,8 +982,8 @@
     "__prefab": null,
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 100.078125,
-      "height": 50.400000000000006
+      "width": 100.06140194709397,
+      "height": 50.4
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -1015,7 +1015,7 @@
     "_string": "0 / 50",
     "_horizontalAlign": 1,
     "_verticalAlign": 0,
-    "_actualFontSize": 48,
+    "_actualFontSize": 46.77777777777778,
     "_fontSize": 40,
     "_fontFamily": "Arial",
     "_lineHeight": 40,
@@ -1103,7 +1103,7 @@
         "__id__": 47
       }
     ],
-    "_active": false,
+    "_active": true,
     "_components": [
       {
         "__id__": 100
@@ -1360,8 +1360,8 @@
     "__prefab": null,
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 396.533203125,
-      "height": 126
+      "width": 396.5180849632571,
+      "height": 126.00000000000001
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -1393,7 +1393,7 @@
     "_string": "You Win!",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
-    "_actualFontSize": 120,
+    "_actualFontSize": 116.94444444444446,
     "_fontSize": 100,
     "_fontFamily": "Arial",
     "_lineHeight": 100,
@@ -2132,6 +2132,7 @@
     "_enabled": true,
     "__prefab": null,
     "uiName": "End",
+    "defaultActive": false,
     "_id": "dfEDyBxA1H56AmuLBy76Pw"
   },
   {
@@ -3032,7 +3033,7 @@
     "__prefab": null,
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 235.03803512924725,
+      "width": 234.98981010697884,
       "height": 50.400000000000006
     },
     "_anchorPoint": {
@@ -3065,7 +3066,7 @@
     "_string": "3D Version 1.0 beta",
     "_horizontalAlign": 2,
     "_verticalAlign": 1,
-    "_actualFontSize": 30,
+    "_actualFontSize": 29.236111111111114,
     "_fontSize": 25,
     "_fontFamily": "Arial",
     "_lineHeight": 40,
@@ -3189,6 +3190,7 @@
     "_enabled": true,
     "__prefab": null,
     "uiName": "Start",
+    "defaultActive": true,
     "_id": "e47tsRfmlKzY4Z41MU7/Qo"
   },
   {

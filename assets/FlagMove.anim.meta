@@ -2,12 +2,12 @@
   "ver": "2.0.3",
   "importer": "animation-clip",
   "imported": true,
-  "uuid": "1b6ef80e-2014-452b-a9b3-742b8440772c",
+  "uuid": "42e2c12a-7441-4af3-aa63-829c87f4a6aa",
   "files": [
     ".cconb"
   ],
   "subMetas": {},
   "userData": {
-    "name": "FlagUp"
+    "name": "FlagMove"
   }
 }

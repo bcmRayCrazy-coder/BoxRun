@@ -1,7 +1,7 @@
 [
   {
     "__type__": "cc.AnimationClip",
-    "_name": "flagUp",
+    "_name": "FlagUp",
     "_objFlags": 0,
     "__editorExtras__": {
       "embeddedPlayerGroups": []
