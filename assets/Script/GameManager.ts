@@ -1,5 +1,6 @@
 import {
     _decorator,
+    Animation,
     CCFloat,
     CCInteger,
     Component,
@@ -31,6 +32,7 @@ const DieBlocks = [BlockType.BT_NONE, BlockType.BT_SWIPER];
 @ccclass('GameManager')
 export class GameManager extends Component {
     private _road: BlockType[] = [];
+    private _roadFlag: Node;
     private _currentState = GameState.GS_INIT;
 
     @property(Prefab)
@@ -80,7 +82,7 @@ export class GameManager extends Component {
         this._road.push(BlockType.BT_GROUND);
         this.randomRoad();
         this._road.push(BlockType.BT_END);
-        this._road.push(BlockType.BT_END);
+        this._road.push(BlockType.BT_GROUND);
 
         this.spawnBlocks();
     }
@@ -129,6 +131,7 @@ export class GameManager extends Component {
                 break;
             case BlockType.BT_END:
                 block = instantiate(this.endPrefab);
+                this._roadFlag = block.getChildByName('flag');
                 break;
         }
 
@@ -144,6 +147,8 @@ export class GameManager extends Component {
                 this.setCurrentState(GameState.GS_INIT);
         } else {
             this.stepLabel.string = `${this.roadLength} / ${this.roadLength}`;
+            this.playerController.setInputActive(false);
+            this._roadFlag.getComponent(Animation).play('FlagUp');
             this.setCurrentState(GameState.GS_END);
         }
     }
@@ -176,7 +181,6 @@ export class GameManager extends Component {
                 break;
             case GameState.GS_END:
                 this.activeUi('End');
-                this.playerController.setInputActive(false);
                 break;
         }
     }
