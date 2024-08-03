@@ -2,12 +2,12 @@
   "ver": "2.0.3",
   "importer": "animation-clip",
   "imported": true,
-  "uuid": "42e2c12a-7441-4af3-aa63-829c87f4a6aa",
+  "uuid": "615d5cfd-5e1a-405f-8d31-8d5748a30eee",
   "files": [
     ".cconb"
   ],
   "subMetas": {},
   "userData": {
-    "name": "FlagMove"
+    "name": "SwiperMove"
   }
 }
